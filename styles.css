@@ -1,0 +1,256 @@
+/* Variables */
+
+:root {
+  --blanco: #f0f0f0;
+  --verde: hsl(110, 60%, 40%);
+  --purpura: hsl(275, 30%, 35%)
+}
+
+/* Reseteo base */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Ajuste del tamano de fuente */
+
+html {
+    /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+}
+
+/* Estilos basicos */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--blanco);
+  background: linear-gradient(
+    62deg,
+    #3a3d40 0%, 
+    #181719 100%
+  )
+}
+
+h1, h2 {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navbar */
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh / 10);
+  background-color: var(--verde);
+  z-index: 5;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / 3)
+}
+
+nav a {
+  color: var(--blanco);
+  padding: 2rem;
+}
+
+/* Welcome section */
+
+#welcome-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#welcome-section p {
+  color: var(--verde);
+  font-size: 3.5rem;
+  font-weight: lighter;
+  margin-top: 10px;
+}
+
+/* Projects section */
+
+#projects {
+  background-color: var(--purpura);
+  padding-top: 3rem;
+  padding-bottom: 1px; /*por alguna razÃƒÂ³n, sin este padding el margen inferior no se muestra */
+}
+
+#projects-header {
+  margin: 0 auto 4rem auto;
+  border-bottom: 2px solid var(--blanco);
+  max-width: 680px;
+}
+
+.project-type-header {
+  margin-bottom: 3rem;
+}
+
+
+/* La segunda linea esta sacada del proyecto de ejemplo de freeCodeCamp
+Aun no manejo CSS Grid con mucha fluidez. El codigo original dice que
+es para hacer al contenido responsivo sin media queries, y es cierto. */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+.project-tile {
+  color: var(--blanco);
+  text-align: center;
+  margin: 0;
+}
+
+.project-label {
+  height: calc(100% / 6);
+  margin-top: -7px;
+  padding: 1rem 0.5rem;
+  background-color:#3a3d40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-subtitle {
+  opacity: 60%;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.project-image {
+  object-fit: cover;
+  height: 40vh;
+  max-height: 330px;
+  width: 100%;
+}
+
+.project-tile.libro.proximamente {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #3a3d40;
+  height: 280px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.question-mark {
+  font-size: 17rem;
+  opacity: 60%
+}
+
+.project-tile.libro.proximamente p {
+  margin-bottom: -5rem;
+  opacity: 60%;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.title-decoration {
+  color: transparent;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.project-tile:hover .title-decoration {
+  color: var(--verde);
+}
+
+/* Contact section */
+
+#contact-section-header {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#contact-section-header p {
+  font-size: 2rem;
+  font-weight: lighter;
+  font-style: italic;
+  margin-top: 5px;
+  margin-bottom: 1rem
+}
+
+#contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: var(--blanco);
+  margin-bottom: 3rem;
+
+}
+
+.contact-link {
+  color: var(--blanco);
+  padding: 1rem 2rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.contact-link:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+/* Media queries */
+
+@media (max-width: 860px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  nav ul {
+    width: 100%;
+  }
+
+  #projects {
+    padding: 1rem 2rem;
+  }
+}
