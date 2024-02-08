@@ -253,4 +253,7 @@ es para hacer al contenido responsivo sin media queries, y es cierto. */
   #projects {
     padding: 1rem 2rem;
   }
+  .project-label {
+    height: calc(100% / 4);
+  }
 }
